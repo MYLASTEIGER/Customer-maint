@@ -1,0 +1,20 @@
+<table class="table table-sm">
+    <thead>
+        <th [ngClass]="tblhdstyle">Id</th>
+        <th [ngClass]="tblhdstyle">Name</th>
+        <th [ngClass]="tblhdstyle">StateCode</th>
+        <th [ngClass]="tblhdstyle">Active</th>
+        <th [ngClass]="tblhdstyle">Sales</th>
+    </thead>
+    <tbody >
+        <tr *ngFor="let c of customers">
+        <td>{{c.id}}</td>
+        <td>{{c.name}}</td>
+        <td *ngIf="c.stateCode =='OH'">Ohio</td>
+        <td *ngIf="c.stateCode =='MN'">Minnesota</td>
+        <td *ngIf="c.stateCode !='MN' && c.stateCode != 'OH'">{{c.stateCode}}</td>
+        <td>{{c.active}}</td>
+        <td>{{c.sales}}</td>
+    </tbody>
+
+</table>
